@@ -72,7 +72,7 @@
         },
         methods: {
             setQrCode(elmentId,index) {
-                content = qrModal.inbound.genLink(qrModal.dbInbound.address,qrModal.dbInbound.remark,index)
+                content = qrModal.inbound.genLink(qrModal.dbInbound.address,qrModal.dbInbound.remark+"."+qrModal.dbInbound.email,index)
 
                 new QRious({
                         element: document.querySelector('#'+elmentId),
@@ -81,7 +81,7 @@
                     });
             },
             copyTextToClipboard(elmentId,index) {
-                link = qrModal.inbound.genLink(qrModal.dbInbound.address,qrModal.dbInbound.remark,index)
+                link = qrModal.inbound.genLink(qrModal.dbInbound.address,qrModal.dbInbound.remark+"."+qrModal.dbInbound.email,index)
                 this.qrModal.copyText = link
 
                 this.qrModal.clipboard = new ClipboardJS('#' + elmentId, {
